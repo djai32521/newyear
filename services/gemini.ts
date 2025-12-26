@@ -1,8 +1,9 @@
 
 import { GoogleGenAI, Type, GenerateContentResponse } from "@google/genai";
 import { CardTheme } from '../types';
+import { deobfuscate } from '../utils/crypto';
 
-const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const getAI = () => new GoogleGenAI({ apiKey: deobfuscate(process.env.API_KEY || '') });
 
 /**
  * AI로 상황에 맞는 새해 인사말을 생성합니다.
@@ -39,8 +40,8 @@ export const generateNewYearMessage = async (recipient: string, sender: string, 
 export const generateCardBackground = async (theme: CardTheme): Promise<string | null> => {
   const ai = getAI();
   let themePrompt = "";
-  
-  switch(theme) {
+
+  switch (theme) {
     case 'traditional':
       themePrompt = "Traditional Korean painting style, Hanbok patterns, soft watercolor mountains and pine trees, festive red and gold accents, high quality, artistic.";
       break;

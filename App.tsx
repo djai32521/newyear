@@ -67,24 +67,24 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen pb-20 selection:bg-red-100 font-main">
-      <header className="bg-red-950 text-white py-20 px-4 text-center shadow-2xl relative overflow-hidden">
+      <header className="bg-red-950 text-white py-16 md:py-24 px-4 text-center shadow-2xl relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-orange-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        
+
         <div className="relative z-10">
           <h1 className="text-6xl md:text-8xl font-title tracking-tighter mb-4 drop-shadow-2xl">2026 병오년</h1>
           <p className="text-red-200 text-xl font-gowun font-medium max-w-2xl mx-auto leading-relaxed">
-            기운찬 붉은 말의 해, AI 아트로 전하는 따뜻한 진심.<br/>
+            기운찬 붉은 말의 해, AI 아트로 전하는 따뜻한 진심.<br />
             소중한 분들께 특별한 감동을 선물하세요.
           </p>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto mt-[-60px] px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <main className="max-w-7xl mx-auto -mt-12 md:-mt-16 px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-20">
         {/* Editor & Samples (Left) */}
         <div className="lg:col-span-7 space-y-8">
-          
+
           {/* Quick Presets Section */}
           <section className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
             <h2 className="text-2xl font-bold mb-6 flex items-center text-gray-800">
@@ -117,17 +117,16 @@ const App: React.FC = () => {
                   <button
                     key={t.id}
                     onClick={() => handleThemeChange(t.id)}
-                    className={`py-3 px-1 rounded-xl border-2 transition-all duration-300 text-xs font-bold ${
-                      cardData.theme === t.id 
-                        ? 'border-red-600 bg-red-600 text-white shadow-lg' 
+                    className={`py-3 px-1 rounded-xl border-2 transition-all duration-300 text-xs font-bold ${cardData.theme === t.id
+                        ? 'border-red-600 bg-red-600 text-white shadow-lg'
                         : 'border-gray-50 bg-gray-50 hover:border-red-200 text-gray-500'
-                    }`}
+                      }`}
                   >
                     {t.label}
                   </button>
                 ))}
               </div>
-              <button 
+              <button
                 onClick={handleGenerateImage}
                 disabled={isLoadingImage}
                 className="mt-6 w-full py-4 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white rounded-2xl font-bold shadow-xl transition-all flex items-center justify-center disabled:opacity-50"
@@ -195,23 +194,23 @@ const App: React.FC = () => {
           <div className="bg-slate-900 p-6 rounded-t-[2.5rem] flex justify-between items-center">
             <h2 className="font-bold text-amber-500 text-xs tracking-widest uppercase">Byeong-Oh-Nyeon 2026</h2>
             <div className="flex gap-2">
-               <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-               <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
             </div>
           </div>
           <div className="bg-white p-8 md:p-12 rounded-b-[2.5rem] shadow-2xl border-x border-b border-gray-100">
             <Card data={cardData} isLoading={isLoadingMessage} />
-            
+
             <div className="mt-12 space-y-4">
-              <button 
+              <button
                 onClick={() => alert("스크린샷(캡처)을 통해 카드를 저장해 보세요!")}
                 className="w-full bg-red-800 hover:bg-red-900 text-white font-title text-2xl py-5 rounded-2xl shadow-xl transition-all active:scale-95 flex items-center justify-center gap-3"
               >
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                 카드 이미지 저장
               </button>
-              <button 
+              <button
                 onClick={() => {
                   navigator.clipboard.writeText(window.location.href);
                   alert("연하장 만들기 링크가 복사되었습니다!");
@@ -232,11 +231,11 @@ const App: React.FC = () => {
           <span className="w-2 h-2 rounded-full bg-red-400"></span>
         </div>
         <p className="text-gray-600 font-gowun text-lg px-4">
-          당신의 마음이 붉은 말처럼 힘차게 전달되길 바랍니다.<br/>
+          당신의 마음이 붉은 말처럼 힘차게 전달되길 바랍니다.<br />
           <span className="text-sm font-sans mt-2 block">© 2026 AI New Year Card Service</span>
         </p>
       </footer>
-      
+
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;

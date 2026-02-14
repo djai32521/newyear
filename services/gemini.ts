@@ -3,7 +3,7 @@ import { GoogleGenAI, Type, GenerateContentResponse } from "@google/genai";
 import { CardTheme } from '../types';
 import { deobfuscate } from '../utils/crypto';
 
-const getAI = () => new GoogleGenAI({ apiKey: deobfuscate(process.env.API_KEY || '') });
+const getAI = () => new GoogleGenAI({ apiKey: deobfuscate(import.meta.env.VITE_GEMINI_API_KEY || '') });
 
 /**
  * AI로 상황에 맞는 새해 인사말을 생성합니다.
